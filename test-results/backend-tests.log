@@ -1,0 +1,66 @@
+﻿COMMAND: C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Scripts\python.exe -m pytest -v
+EXIT CODE: 0
+----------------------------------------
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-8.3.3, pluggy-1.6.0 -- C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend
+plugins: anyio-4.15.1
+collecting ... collected 34 items
+
+tests/test_alerts.py::test_list_alerts_requires_authentication PASSED    [  2%]
+tests/test_alerts.py::test_list_alerts_returns_seeded_demo_alerts PASSED [  5%]
+tests/test_alerts.py::test_mark_alert_as_read PASSED                     [  8%]
+tests/test_auth.py::test_register_new_user PASSED                        [ 11%]
+tests/test_auth.py::test_register_rejects_password_mismatch PASSED       [ 14%]
+tests/test_auth.py::test_register_rejects_weak_password PASSED           [ 17%]
+tests/test_auth.py::test_duplicate_registration_is_rejected PASSED       [ 20%]
+tests/test_auth.py::test_valid_login_succeeds PASSED                     [ 23%]
+tests/test_auth.py::test_login_with_invalid_password_is_rejected PASSED  [ 26%]
+tests/test_auth.py::test_login_with_unknown_email_is_rejected PASSED     [ 29%]
+tests/test_auth.py::test_protected_endpoint_without_token_is_rejected PASSED [ 32%]
+tests/test_auth.py::test_protected_endpoint_with_valid_token_succeeds PASSED [ 35%]
+tests/test_auth.py::test_protected_endpoint_with_garbage_token_is_rejected PASSED [ 38%]
+tests/test_auth.py::test_logout_endpoint_responds_successfully PASSED    [ 41%]
+tests/test_auth.py::test_remember_me_grants_a_longer_lived_token PASSED  [ 44%]
+tests/test_profile.py::test_get_profile_requires_authentication PASSED   [ 47%]
+tests/test_profile.py::test_get_profile_returns_current_user PASSED      [ 50%]
+tests/test_profile.py::test_update_profile_name_and_phone PASSED         [ 52%]
+tests/test_profile.py::test_update_password_requires_correct_current_password PASSED [ 55%]
+tests/test_profile.py::test_update_password_succeeds_with_correct_current_password PASSED [ 58%]
+tests/test_timestamps.py::test_user_created_at_is_unambiguous_utc PASSED [ 61%]
+tests/test_timestamps.py::test_trip_timestamps_are_unambiguous_utc PASSED [ 64%]
+tests/test_timestamps.py::test_updated_at_changes_after_status_update PASSED [ 67%]
+tests/test_timestamps.py::test_alert_created_at_is_unambiguous_utc PASSED [ 70%]
+tests/test_timestamps.py::test_dashboard_recent_trips_timestamps_are_unambiguous_utc PASSED [ 73%]
+tests/test_trips.py::test_create_trip_while_authenticated PASSED         [ 76%]
+tests/test_trips.py::test_create_trip_without_authentication_is_rejected PASSED [ 79%]
+tests/test_trips.py::test_get_users_trips_returns_only_their_own PASSED  [ 82%]
+tests/test_trips.py::test_user_cannot_access_another_users_trip PASSED   [ 85%]
+tests/test_trips.py::test_get_trip_details PASSED                        [ 88%]
+tests/test_trips.py::test_update_trip_status_valid_transition PASSED     [ 91%]
+tests/test_trips.py::test_invalid_status_transition_is_rejected PASSED   [ 94%]
+tests/test_trips.py::test_delete_planned_trip PASSED                     [ 97%]
+tests/test_trips.py::test_cannot_delete_active_trip PASSED               [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:40
+  C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Lib\site-packages\starlette\testclient.py:40: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+.venv\Lib\site-packages\pydantic\_internal\_config.py:291
+.venv\Lib\site-packages\pydantic\_internal\_config.py:291
+.venv\Lib\site-packages\pydantic\_internal\_config.py:291
+  C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Lib\site-packages\pydantic\_internal\_config.py:291: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.9/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/test_alerts.py: 3 warnings
+tests/test_auth.py: 3 warnings
+tests/test_profile.py: 4 warnings
+tests/test_timestamps.py: 7 warnings
+tests/test_trips.py: 18 warnings
+  C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Lib\site-packages\jose\jwt.py:311: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = timegm(datetime.utcnow().utctimetuple())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 34 passed, 39 warnings in 20.18s =======================

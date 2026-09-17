@@ -1,0 +1,344 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260917144029
+Username: DESKTOP-634OHJ9\sahil
+RunAs User: DESKTOP-634OHJ9\sahil
+Configuration Name: 
+Machine: DESKTOP-634OHJ9 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\run-tests.ps1
+Process ID: 5924
+PSVersion: 5.1.19041.7663
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.19041.7663
+BuildVersion: 10.0.19041.7663
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+==================================================
+RouteSense AI V2 -- Environment Check
+==================================================
+[OK] python found: C:\Users\sahil\AppData\Local\Programs\Python\Python312\python.exe
+[OK] node found: C:\Program Files\nodejs\node.exe
+[OK] npm found: C:\Program Files\nodejs\npm.ps1
+[OK] Environment check passed.
+
+==================================================
+Backend Environment
+==================================================
+[*] Creating virtual environment at C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv ...
+[*] Checking whether backend dependencies are already installed...
+[*] Dependencies not fully present (this is normal for a fresh venv) -- installing...
+  (import check said: exit code 1)
+Collecting fastapi==0.115.0 (from -r requirements.txt (line 1))
+  Using cached fastapi-0.115.0-py3-none-any.whl.metadata (27 kB)
+Collecting uvicorn==0.30.6 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached uvicorn-0.30.6-py3-none-any.whl.metadata (6.6 kB)
+Collecting sqlalchemy==2.0.35 (from -r requirements.txt (line 3))
+  Using cached SQLAlchemy-2.0.35-cp312-cp312-win_amd64.whl.metadata (9.9 kB)
+Collecting pydantic==2.9.2 (from -r requirements.txt (line 4))
+  Using cached pydantic-2.9.2-py3-none-any.whl.metadata (149 kB)
+Collecting pydantic-settings==2.5.2 (from -r requirements.txt (line 5))
+  Using cached pydantic_settings-2.5.2-py3-none-any.whl.metadata (3.5 kB)
+Collecting email-validator==2.2.0 (from -r requirements.txt (line 6))
+  Using cached email_validator-2.2.0-py3-none-any.whl.metadata (25 kB)
+Collecting python-jose==3.3.0 (from python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached python_jose-3.3.0-py2.py3-none-any.whl.metadata (5.4 kB)
+Collecting passlib==1.7.4 (from passlib[bcrypt]==1.7.4->-r requirements.txt (line 8))
+  Using cached passlib-1.7.4-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting bcrypt==4.0.1 (from -r requirements.txt (line 12))
+  Using cached bcrypt-4.0.1-cp36-abi3-win_amd64.whl.metadata (9.0 kB)
+Collecting python-multipart==0.0.9 (from -r requirements.txt (line 13))
+  Using cached python_multipart-0.0.9-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpx==0.27.2 (from -r requirements.txt (line 14))
+  Using cached httpx-0.27.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting python-dotenv==1.0.1 (from -r requirements.txt (line 15))
+  Using cached python_dotenv-1.0.1-py3-none-any.whl.metadata (23 kB)
+Collecting pytest==8.3.3 (from -r requirements.txt (line 18))
+  Using cached pytest-8.3.3-py3-none-any.whl.metadata (7.5 kB)
+Collecting starlette<0.39.0,>=0.37.2 (from fastapi==0.115.0->-r requirements.txt (line 1))
+  Using cached starlette-0.38.6-py3-none-any.whl.metadata (6.0 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi==0.115.0->-r requirements.txt (line 1))
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting click>=7.0 (from uvicorn==0.30.6->uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting h11>=0.8 (from uvicorn==0.30.6->uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting greenlet!=0.4.17 (from sqlalchemy==2.0.35->-r requirements.txt (line 3))
+  Downloading greenlet-3.5.6-cp312-cp312-win_amd64.whl.metadata (3.9 kB)
+Collecting annotated-types>=0.6.0 (from pydantic==2.9.2->-r requirements.txt (line 4))
+  Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.23.4 (from pydantic==2.9.2->-r requirements.txt (line 4))
+  Using cached pydantic_core-2.23.4-cp312-none-win_amd64.whl.metadata (6.7 kB)
+Collecting dnspython>=2.0.0 (from email-validator==2.2.0->-r requirements.txt (line 6))
+  Using cached dnspython-2.8.0-py3-none-any.whl.metadata (5.7 kB)
+Collecting idna>=2.0.0 (from email-validator==2.2.0->-r requirements.txt (line 6))
+  Using cached idna-3.19-py3-none-any.whl.metadata (9.2 kB)
+Collecting ecdsa!=0.15 (from python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached ecdsa-0.19.2-py2.py3-none-any.whl.metadata (29 kB)
+Collecting rsa (from python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached rsa-4.9.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting pyasn1 (from python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached pyasn1-0.6.4-py3-none-any.whl.metadata (8.4 kB)
+Collecting anyio (from httpx==0.27.2->-r requirements.txt (line 14))
+  Using cached anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting certifi (from httpx==0.27.2->-r requirements.txt (line 14))
+  Using cached certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx==0.27.2->-r requirements.txt (line 14))
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting sniffio (from httpx==0.27.2->-r requirements.txt (line 14))
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting iniconfig (from pytest==8.3.3->-r requirements.txt (line 18))
+  Using cached iniconfig-2.3.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting packaging (from pytest==8.3.3->-r requirements.txt (line 18))
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pluggy<2,>=1.5 (from pytest==8.3.3->-r requirements.txt (line 18))
+  Using cached pluggy-1.6.0-py3-none-any.whl.metadata (4.8 kB)
+Collecting colorama (from pytest==8.3.3->-r requirements.txt (line 18))
+  Using cached colorama-0.4.6-py2.py3-none-any.whl.metadata (17 kB)
+Collecting cryptography>=3.4.0 (from python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached cryptography-50.0.1-cp311-abi3-win_amd64.whl.metadata (4.3 kB)
+Collecting httptools>=0.5.0 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached httptools-0.8.0-cp312-cp312-win_amd64.whl.metadata (3.7 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached pyyaml-6.0.3-cp312-cp312-win_amd64.whl.metadata (2.4 kB)
+Collecting watchfiles>=0.13 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached watchfiles-1.2.0-cp312-cp312-win_amd64.whl.metadata (5.0 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]==0.30.6->-r requirements.txt (line 2))
+  Using cached websockets-17.1-cp312-cp312-win_amd64.whl.metadata (6.5 kB)
+Collecting cffi>=2.0.0 (from cryptography>=3.4.0->python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached cffi-2.1.1-cp312-cp312-win_amd64.whl.metadata (2.6 kB)
+Collecting six>=1.9.0 (from ecdsa!=0.15->python-jose==3.3.0->python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=3.4.0->python-jose[cryptography]==3.3.0->-r requirements.txt (line 7))
+  Using cached pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Using cached fastapi-0.115.0-py3-none-any.whl (94 kB)
+Using cached uvicorn-0.30.6-py3-none-any.whl (62 kB)
+Using cached SQLAlchemy-2.0.35-cp312-cp312-win_amd64.whl (2.1 MB)
+Using cached pydantic-2.9.2-py3-none-any.whl (434 kB)
+Using cached pydantic_settings-2.5.2-py3-none-any.whl (26 kB)
+Using cached email_validator-2.2.0-py3-none-any.whl (33 kB)
+Using cached python_jose-3.3.0-py2.py3-none-any.whl (33 kB)
+Using cached passlib-1.7.4-py2.py3-none-any.whl (525 kB)
+Using cached bcrypt-4.0.1-cp36-abi3-win_amd64.whl (152 kB)
+Using cached python_multipart-0.0.9-py3-none-any.whl (22 kB)
+Using cached httpx-0.27.2-py3-none-any.whl (76 kB)
+Using cached python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Using cached pytest-8.3.3-py3-none-any.whl (342 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached pydantic_core-2.23.4-cp312-none-win_amd64.whl (1.9 MB)
+Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Using cached click-8.5.0-py3-none-any.whl (125 kB)
+Using cached colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Using cached cryptography-50.0.1-cp311-abi3-win_amd64.whl (3.8 MB)
+Using cached dnspython-2.8.0-py3-none-any.whl (331 kB)
+Using cached ecdsa-0.19.2-py2.py3-none-any.whl (150 kB)
+Downloading greenlet-3.5.6-cp312-cp312-win_amd64.whl (324 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached httptools-0.8.0-cp312-cp312-win_amd64.whl (90 kB)
+Using cached idna-3.19-py3-none-any.whl (68 kB)
+Using cached pluggy-1.6.0-py3-none-any.whl (20 kB)
+Using cached pyyaml-6.0.3-cp312-cp312-win_amd64.whl (154 kB)
+Using cached starlette-0.38.6-py3-none-any.whl (71 kB)
+Using cached anyio-4.15.1-py3-none-any.whl (132 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached watchfiles-1.2.0-cp312-cp312-win_amd64.whl (288 kB)
+Using cached websockets-17.1-cp312-cp312-win_amd64.whl (217 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Using cached iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Using cached pyasn1-0.6.4-py3-none-any.whl (84 kB)
+Using cached rsa-4.9.1-py3-none-any.whl (34 kB)
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Using cached cffi-2.1.1-cp312-cp312-win_amd64.whl (185 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached pycparser-3.0-py3-none-any.whl (48 kB)
+Installing collected packages: passlib, websockets, typing-extensions, sniffio, six, pyyaml, python-multipart, python-dotenv, pycparser, pyasn1, pluggy, packaging, iniconfig, idna, httptools, h11, greenlet, dnspython, colorama, click, certifi, bcrypt, annotated-types, uvicorn, sqlalchemy, rsa, pytest, pydantic-core, httpcore, email-validator, ecdsa, cffi, anyio, watchfiles, starlette, python-jose, pydantic, httpx, cryptography, pydantic-settings, fastapi
+Successfully installed annotated-types-0.8.0 anyio-4.15.1 bcrypt-4.0.1 certifi-2026.7.22 cffi-2.1.1 click-8.5.0 colorama-0.4.6 cryptography-50.0.1 dnspython-2.8.0 ecdsa-0.19.2 email-validator-2.2.0 fastapi-0.115.0 greenlet-3.5.6 h11-0.16.0 httpcore-1.0.9 httptools-0.8.0 httpx-0.27.2 idna-3.19 iniconfig-2.3.0 packaging-26.3 passlib-1.7.4 pluggy-1.6.0 pyasn1-0.6.4 pycparser-3.0 pydantic-2.9.2 pydantic-core-2.23.4 pydantic-settings-2.5.2 pytest-8.3.3 python-dotenv-1.0.1 python-jose-3.3.0 python-multipart-0.0.9 pyyaml-6.0.3 rsa-4.9.1 six-1.17.0 sniffio-1.3.1 sqlalchemy-2.0.35 starlette-0.38.6 typing-extensions-4.16.0 uvicorn-0.30.6 watchfiles-1.2.0 websockets-17.1
+System.Management.Automation.RemoteException
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Scripts\python.exe -m pip install --upgrade pip
+[OK] Backend dependencies installed.
+
+==================================================
+Frontend Environment
+==================================================
+[*] node_modules not found -- running npm install...
+node.exe : npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (npm warn instal...y allowScripts::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+npm warn install-scripts   esbuild@0.21.5 (postinstall: node install.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+
+added 97 packages, and audited 98 packages in 44s
+
+13 packages are looking for funding
+  run `npm fund` for details
+
+4 vulnerabilities (3 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn install-scripts   esbuild@0.21.5 (postinstall: node install.js)
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+[OK] Frontend dependencies installed.
+
+==================================================
+Playwright Browser Check
+==================================================
+[*] Ensuring Playwright browsers are installed (no-op if already present)...
+[OK] Playwright browsers ready.
+
+==================================================
+Backend Tests (pytest)
+==================================================
+============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-8.3.3, pluggy-1.6.0 -- C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend
+plugins: anyio-4.15.1
+collecting ... collected 34 items
+
+tests/test_alerts.py::test_list_alerts_requires_authentication PASSED    [  2%]
+tests/test_alerts.py::test_list_alerts_returns_seeded_demo_alerts PASSED [  5%]
+tests/test_alerts.py::test_mark_alert_as_read PASSED                     [  8%]
+tests/test_auth.py::test_register_new_user PASSED                        [ 11%]
+tests/test_auth.py::test_register_rejects_password_mismatch PASSED       [ 14%]
+tests/test_auth.py::test_register_rejects_weak_password PASSED           [ 17%]
+tests/test_auth.py::test_duplicate_registration_is_rejected PASSED       [ 20%]
+tests/test_auth.py::test_valid_login_succeeds PASSED                     [ 23%]
+tests/test_auth.py::test_login_with_invalid_password_is_rejected PASSED  [ 26%]
+tests/test_auth.py::test_login_with_unknown_email_is_rejected PASSED     [ 29%]
+tests/test_auth.py::test_protected_endpoint_without_token_is_rejected PASSED [ 32%]
+tests/test_auth.py::test_protected_endpoint_with_valid_token_succeeds PASSED [ 35%]
+tests/test_auth.py::test_protected_endpoint_with_garbage_token_is_rejected PASSED [ 38%]
+tests/test_auth.py::test_logout_endpoint_responds_successfully PASSED    [ 41%]
+tests/test_auth.py::test_remember_me_grants_a_longer_lived_token PASSED  [ 44%]
+tests/test_profile.py::test_get_profile_requires_authentication PASSED   [ 47%]
+tests/test_profile.py::test_get_profile_returns_current_user PASSED      [ 50%]
+tests/test_profile.py::test_update_profile_name_and_phone PASSED         [ 52%]
+tests/test_profile.py::test_update_password_requires_correct_current_password PASSED [ 55%]
+tests/test_profile.py::test_update_password_succeeds_with_correct_current_password PASSED [ 58%]
+tests/test_timestamps.py::test_user_created_at_is_unambiguous_utc PASSED [ 61%]
+tests/test_timestamps.py::test_trip_timestamps_are_unambiguous_utc PASSED [ 64%]
+tests/test_timestamps.py::test_updated_at_changes_after_status_update PASSED [ 67%]
+tests/test_timestamps.py::test_alert_created_at_is_unambiguous_utc PASSED [ 70%]
+tests/test_timestamps.py::test_dashboard_recent_trips_timestamps_are_unambiguous_utc PASSED [ 73%]
+tests/test_trips.py::test_create_trip_while_authenticated PASSED         [ 76%]
+tests/test_trips.py::test_create_trip_without_authentication_is_rejected PASSED [ 79%]
+tests/test_trips.py::test_get_users_trips_returns_only_their_own PASSED  [ 82%]
+tests/test_trips.py::test_user_cannot_access_another_users_trip PASSED   [ 85%]
+tests/test_trips.py::test_get_trip_details PASSED                        [ 88%]
+tests/test_trips.py::test_update_trip_status_valid_transition PASSED     [ 91%]
+tests/test_trips.py::test_invalid_status_transition_is_rejected PASSED   [ 94%]
+tests/test_trips.py::test_delete_planned_trip PASSED                     [ 97%]
+tests/test_trips.py::test_cannot_delete_active_trip PASSED               [100%]
+
+============================== warnings summary ===============================
+.venv\Lib\site-packages\starlette\testclient.py:40
+  C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Lib\site-packages\starlette\testclient.py:40: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    _PortalFactoryType = typing.Callable[[], typing.ContextManager[anyio.abc.BlockingPortal]]
+
+.venv\Lib\site-packages\pydantic\_internal\_config.py:291
+.venv\Lib\site-packages\pydantic\_internal\_config.py:291
+.venv\Lib\site-packages\pydantic\_internal\_config.py:291
+  C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Lib\site-packages\pydantic\_internal\_config.py:291: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.9/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+tests/test_alerts.py: 3 warnings
+tests/test_auth.py: 3 warnings
+tests/test_profile.py: 4 warnings
+tests/test_timestamps.py: 7 warnings
+tests/test_trips.py: 18 warnings
+  C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\backend\.venv\Lib\site-packages\jose\jwt.py:311: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = timegm(datetime.utcnow().utctimetuple())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 34 passed, 39 warnings in 20.18s =======================
+[OK] Backend tests passed: ====================== 34 passed, 39 warnings in 20.18s =======================
+
+==================================================
+Starting Backend Server
+==================================================
+[*] Launching uvicorn in the background (log: C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\test-results\backend-server.log)...
+[*] Waiting for Backend to respond at http://127.0.0.1:8000/api/health (timeout 60s)...
+PS>TerminatingError(Invoke-WebRequest): "Unable to connect to the remote server"
+[OK] Backend is ready.
+
+==================================================
+Starting Frontend Server
+==================================================
+[*] Launching Vite dev server in the background (log: C:\Users\sahil\Music\RouteSense-AI-repo\Version 2\test-results\frontend-server.log)...
+[*] Waiting for Frontend to respond at http://127.0.0.1:5173 (timeout 60s)...
+[OK] Frontend is ready.
+
+==================================================
+Playwright End-to-End Tests
+==================================================
+
+Running 6 tests using 2 workers
+
+  Γ£ô  1 e2e\trip-flow.spec.js:33:1 ΓÇ║ login and dashboard loads with real stats (8.3s)
+  Γ£ô  3 e2e\trip-flow.spec.js:40:1 ΓÇ║ create a trip, see it in My Trips, open details, update status (4.2s)
+  Γ£ô  2 e2e\multi-tab-auth.spec.js:63:1 ΓÇ║ multi-tab session isolation: independent identity, data ownership, and logout across two tabs (13.2s)
+  Γ£ô  4 e2e\trip-flow.spec.js:74:1 ΓÇ║ dashboard statistics update after creating a trip (3.5s)
+  Γ£ô  5 e2e\trip-flow.spec.js:91:1 ΓÇ║ profile loads and can be updated (3.4s)
+  Γ£ô  6 e2e\trip-flow.spec.js:104:1 ΓÇ║ logout redirects to login and protects dashboard (3.9s)
+
+  6 passed (25.3s)
+[OK] Playwright tests passed: 6 passed (25.3s)
+
+==================================================
+Cleanup
+==================================================
+[*] Cleaning up: stopping only the processes this script started...
+    stopping PID 4072 (python) and its child processes
+    stopping PID 14704 (cmd) and its child processes
+[OK] Stopped all processes started by this script.
+
+==================================================
+RouteSense AI - Version 2 Test Report
+==================================================
+
+Environment             : PASS
+Backend dependencies    : PASS
+Frontend dependencies   : PASS
+Playwright browsers     : PASS
+Backend pytest          : PASS
+Backend server          : PASS
+Frontend server         : PASS
+Playwright tests        : PASS
+
+Backend pytest:
+  ====================== 34 passed, 39 warnings in 20.18s =======================
+
+Playwright:
+  6 passed (25.3s)
+
+Overall:
+[OK] PASS
+==================================================
+**********************
+Windows PowerShell transcript end
+End time: 20260917144408
+**********************

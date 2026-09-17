@@ -1,0 +1,14 @@
+﻿COMMAND: npx playwright test
+EXIT CODE: 0
+----------------------------------------
+
+Running 6 tests using 2 workers
+
+  Γ£ô  1 e2e\trip-flow.spec.js:33:1 ΓÇ║ login and dashboard loads with real stats (8.3s)
+  Γ£ô  3 e2e\trip-flow.spec.js:40:1 ΓÇ║ create a trip, see it in My Trips, open details, update status (4.2s)
+  Γ£ô  2 e2e\multi-tab-auth.spec.js:63:1 ΓÇ║ multi-tab session isolation: independent identity, data ownership, and logout across two tabs (13.2s)
+  Γ£ô  4 e2e\trip-flow.spec.js:74:1 ΓÇ║ dashboard statistics update after creating a trip (3.5s)
+  Γ£ô  5 e2e\trip-flow.spec.js:91:1 ΓÇ║ profile loads and can be updated (3.4s)
+  Γ£ô  6 e2e\trip-flow.spec.js:104:1 ΓÇ║ logout redirects to login and protects dashboard (3.9s)
+
+  6 passed (25.3s)

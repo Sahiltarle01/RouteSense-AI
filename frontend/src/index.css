@@ -1,0 +1,45 @@
+:root {
+  --bg-page: #f7f8fa;
+  --bg-surface: #ffffff;
+  --bg-elevated: #0e1a2b;
+  --border-line: #e3e6eb;
+  --text-primary: #14181f;
+  --text-muted: #626a78;
+  --text-inverse: #f2f5f9;
+  --accent-route: #1f7a5c;      /* primary brand accent -- route/safety green, not generic blue */
+  --accent-route-dark: #16593f;
+  --accent-warning: #b8720c;
+  --accent-danger: #c23b3b;
+  --status-planned: #4f6d8f;
+  --status-active: #1f7a5c;
+  --status-completed: #5b6472;
+  --status-cancelled: #9a3f3f;
+  --severity-low: #4f6d8f;
+  --severity-medium: #b8720c;
+  --severity-high: #c2621f;
+  --severity-critical: #c23b3b;
+  --font-ui: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; margin: 0; }
+
+body {
+  font-family: var(--font-ui);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, select, textarea { font-family: inherit; }
+button { cursor: pointer; }
+a { color: var(--accent-route); text-decoration: none; }
+:focus-visible { outline: 2px solid var(--accent-route); outline-offset: 2px; }
+
+/* Reusable responsive two-column layout: stacks to one column on narrow
+   screens. Used by Dashboard and Trip Details. */
+.rs-two-col { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
+@media (max-width: 780px) {
+  .rs-two-col { grid-template-columns: 1fr; }
+}
